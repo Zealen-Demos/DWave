@@ -20,8 +20,9 @@ def browser():
 def login(browser):
     LoginPage = DWaveLoginPage(browser)
     browser.get(LoginPage.URL)
-    LoginPage.getUsername().send_keys("fall_back_up@hotmail.com")
-    LoginPage.getPassword().send_keys("Dylan*Jack123")
+    # Credentials should be moved to local configuration file
+    LoginPage.getUsername().send_keys("********")
+    LoginPage.getPassword().send_keys("********")
     LoginPage.getLoginButton().click()
     element = WebDriverWait(browser, 10).until(
         EC.url_matches('https://cloud.dwavesys.com/leap/')
